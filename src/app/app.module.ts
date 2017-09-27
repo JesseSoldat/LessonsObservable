@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 import { RouterModule } from '@angular/router';
 import { routerConfig } from './router.config';
 import { AppComponent } from './app.component';
@@ -25,7 +28,8 @@ import { LessonsCounterComponent } from './lessons-counter/lessons-counter.compo
     FormsModule,
     HttpModule, 
     RouterModule.forRoot(routerConfig),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
