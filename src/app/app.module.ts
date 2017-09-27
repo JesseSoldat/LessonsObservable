@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { LessonsCounterComponent } from './lessons-counter/lessons-counter.component';
+import { EventBusComponent } from './event-bus/event-bus.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LessonsCounterComponent } from './lessons-counter/lessons-counter.compo
     LessonsListComponent,
     LessonsCounterComponent,
     HomeComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    EventBusComponent
   ],
   imports: [
     BrowserModule,
