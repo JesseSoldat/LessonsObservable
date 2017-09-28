@@ -9,13 +9,16 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { RouterModule } from '@angular/router';
 import { routerConfig } from './router.config';
+import { CoursesService } from "./services/courses.service";
+import { NewsletterService } from "./services/newsletter.service"; 
+import { UserService } from "./services/user.service";
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { LessonsCounterComponent } from './lessons-counter/lessons-counter.component';
 import { EventBusComponent } from './event-bus/event-bus.component';
-import { CoursesService } from "./services/courses.service";
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { LoginComponent } from './login/login.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
@@ -44,7 +47,11 @@ import { CourseDetailHeaderComponent } from './course-detail-header/course-detai
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [CoursesService],
+  providers: [
+    CoursesService, 
+    NewsletterService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
