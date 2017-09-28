@@ -16,8 +16,8 @@ export class UserService {
   constructor(private http: Http) {}
 
   login(email: string, password: string): Observable<User> {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    // const headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
 
     return this.http.post('/api/login', { email, password })
       .map(res => res.json())
