@@ -1,9 +1,6 @@
 <div class="screen-container">
   <course-detail-header [course]="course$ | async"
-    [lessons]="lessons$ | async"
-    [firstName]="(userService.user$ | async).firstName"
-    (subscribe)="onSubscribe($event)">
-
+    [lessons]="lessons$ | async">
   </course-detail-header>
 
   

@@ -4,7 +4,6 @@ import { Course } from "../shared/model/course";
 import { Lesson } from "../shared/model/lesson";
 import * as _ from 'lodash';
 import { CoursesService } from "../services/courses.service";
-import { NewsletterService } from "../services/newsletter.service";
 import { UserService } from "../services/user.service";
 import { Observable } from 'rxjs/Observable';
 
@@ -19,7 +18,6 @@ export class CourseDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
     private courseService: CoursesService,
-    private newsletterService: NewsletterService,
     private userService: UserService) { }
 
   ngOnInit() {
@@ -31,18 +29,9 @@ export class CourseDetailComponent implements OnInit {
     this.lessons$ = this.course$.switchMap(course => this.courseService.findLessonsForCourse(course.id))
     .first()
     .publishLast().refCount();
-
-   
+ 
   }
 
-  onSubscribe(email: string) {
-    this.newsletterService.subscribeToNewsletter(email)
-      .subscribe(() => {
-        alert('Subscription successful ...');
-      },
-      console.error
-    );
-    
-  }
+  
 
 }
