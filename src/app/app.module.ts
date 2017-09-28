@@ -15,6 +15,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { LessonsCounterComponent } from './lessons-counter/lessons-counter.component';
 import { EventBusComponent } from './event-bus/event-bus.component';
+import { CoursesService } from "./services/courses.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { EventBusComponent } from './event-bus/event-bus.component';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
