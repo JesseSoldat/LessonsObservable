@@ -17,6 +17,10 @@ import { LessonsCounterComponent } from './lessons-counter/lessons-counter.compo
 import { EventBusComponent } from './event-bus/event-bus.component';
 import { CoursesService } from "./services/courses.service";
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { LoginComponent } from './login/login.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { CourseDetailHeaderComponent } from './course-detail-header/course-detail-header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
     HomeComponent,
     CourseDetailComponent,
     EventBusComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    LoginComponent,
+    NewsletterComponent,
+    TopMenuComponent,
+    CourseDetailHeaderComponent
   ],
   imports: [
     BrowserModule,

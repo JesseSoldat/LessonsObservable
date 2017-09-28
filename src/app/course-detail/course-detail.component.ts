@@ -32,4 +32,9 @@ export class CourseDetailComponent implements OnInit {
     });
   }
 
+  onSubscribe(email: string) {
+    console.log(email);
+    
+  }
+
 }
