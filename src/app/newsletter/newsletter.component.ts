@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NewsletterService } from "../services/newsletter.service";
 import { UserService } from "../services/user.service";
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'newsletter',
@@ -9,15 +10,13 @@ import { UserService } from "../services/user.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewsletterComponent implements OnInit {
-  firstName: string;
+  firstName$: Observable<string>;
 
   constructor(private newsletterService: NewsletterService,
               private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.user$.subscribe(user => {
-      this.firstName = user.firstName;
-    });
+    this.firstName$ = this.userService.user$.map(user => user.firstName);
   }
 
   subscribeToNewsletter(emailField) {
