@@ -19,6 +19,5 @@ app.route('/api/courses/:id').get(courseRoute);
 app.route('/api/lessons').get(lessonsRoute);
 app.route('/api/lessons/:id').get(lessonDetailRoute);
 
-app.listen(8091, () => {
-  console.log('Server running at port 8091');
+app.listen(8090, () => {
 });

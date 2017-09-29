@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Lesson } from '../shared/model/lesson';
 import * as _ from 'lodash';
 import { Observer } from 'rxjs/Observer';
@@ -11,11 +11,14 @@ import { store } from '../event-bus/app-data';
 })
 export class LessonsListComponent implements  OnInit{
   @Input() lessons: Lesson[];
+  @Output() selected = new EventEmitter<Lesson>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  
+  ngOnInit() {}
+
+  select(lesson: Lesson) {
+    this.selected.next(lesson);
   }
 
  
